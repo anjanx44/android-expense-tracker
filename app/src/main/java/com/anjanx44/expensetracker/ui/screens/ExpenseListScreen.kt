@@ -16,7 +16,7 @@ import java.util.*
 fun ExpenseListScreen(expenses: List<Expense>, monthlyTotal: Double) {
     Column(modifier = Modifier.padding(16.dp)) {
         Text(
-            text = "Monthly Total: $${"%.2f".format(monthlyTotal)}",
+            text = "Monthly Total: \u09F3${"%.2f".format(monthlyTotal)}",
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier.padding(bottom = 16.dp)
         )
@@ -33,7 +33,7 @@ fun ExpenseListScreen(expenses: List<Expense>, monthlyTotal: Double) {
 fun ExpenseItem(expense: Expense) {
     val dateFormat = remember { SimpleDateFormat("dd MMM yyyy", Locale.getDefault()) }
     Column(modifier = Modifier.padding(vertical = 8.dp)) {
-        Text(text = "${expense.description} - $${expense.amount}", style = MaterialTheme.typography.bodyLarge)
+        Text(text = "${expense.description} - \u09F3${expense.amount}", style = MaterialTheme.typography.bodyLarge)
         Text(text = "Category: ${expense.category}", style = MaterialTheme.typography.bodyMedium)
         Text(text = dateFormat.format(Date(expense.date)), style = MaterialTheme.typography.bodySmall)
     }
